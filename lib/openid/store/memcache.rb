@@ -71,6 +71,7 @@ module OpenID
       end
 
       def assoc_key(server_url, assoc_handle=nil)
+        Rails.logger.info "ruby-openid NIL PROBLEM: key_prefix:#{key_prefix} server_url:#{server_url}"
         key = key_prefix + 'A' + server_url
         if assoc_handle
           key += '|' + assoc_handle
